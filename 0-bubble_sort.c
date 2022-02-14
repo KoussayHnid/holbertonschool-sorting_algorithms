@@ -4,12 +4,12 @@
  * @x: first int to swap
  * @y: second int to swap
  */
-void swap(int *x, int *y)
+void swap(int x, int y)
 {
-	int aux = *x;
+	int aux = x;
 
-	*x = *y;
-	*y = aux;
+	x = y;
+	y = aux;
 }
 /**
  * bubble_sort - function that sorts an array of integers in
@@ -21,13 +21,13 @@ void bubble_sort(int *array, size_t size)
 {
 	size_t i, j;
 
-	for (i = 0; i < size - 1; i++)
+	for (i = 0; i < size; i++)
 	{
-		for (j = 0; j < size - i - 1; j++)
+		for (j = 0; j < size - i; j++)
 		{
 			if (array[j] > array[j + 1])
 			{
-				swap(&array[j], &array[j + 1]);
+				swap(array[j], array[j + 1]);
 				print_array(array, size);
 			}
 		}
